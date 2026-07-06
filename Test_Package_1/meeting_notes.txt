@@ -1,0 +1,37 @@
+The process is called Process Vendor Invoice. The team uses ACME System 1 to process vendor invoice work items. The process is performed by an AP Process Associate and runs during business hours, Monday to Friday, from 9:00 AM to 6:00 PM.
+
+The process starts when the user logs into ACME System 1 and opens the Work Items area. The user looks for work items of type WI3, which correspond to vendor invoice processing tasks.
+
+For each WI3 item, the user opens the work item details and downloads the attached invoice PDF. The invoice contains vendor and invoice information. The important value used to check the vendor is the Vendor TaxID.
+
+After extracting the invoice information, the user goes back to the dashboard and opens the Vendors area, then uses the Search for Vendors screen to search for the vendor using the Vendor TaxID from the invoice.
+
+If the Vendor TaxID is missing from the invoice, the work item should be rejected.
+
+If the vendor exists in ACME System 1, the user goes to the Add Invoice Details screen, enters the invoice information, submits the invoice details, returns to the work item, and updates the work item status to Completed. The comment should say that the invoice was added to the system.
+
+If the vendor does not exist in ACME System 1, the user sends an email to the Vendor-Adding Department asking them to add the vendor. The invoice should be attached to the email. After sending the email, the user returns to the work item and updates the status to Rejected. The comment should explain that the vendor was not present in the system and that the email was sent to VDD.
+
+After each WI3 item is completed or rejected, the user continues with the next WI3 item.
+
+
+Walkthrough notes:
+
+- User opens ACME System 1 in browser.
+- Login requires email and password.
+- If login fails, exception email should be sent.
+- Main page is dashboard.
+- Work Items contains all tasks.
+- Only WI3 items are relevant for this process.
+- Open WI3 details.
+- Download invoice PDF.
+- Extract invoice number, vendor name, TaxID, invoice item details.
+- Search vendor by TaxID.
+- If TaxID is blank or missing, reject work item.
+- If vendor found, add invoice details under Invoices > Add Invoice Details.
+- Then update work item to Completed.
+- Completion comment: Added Invoice [invoice-number] to system.
+- If vendor not found, send email to vdd@acme-test.com with subject Please add Vendor and attach invoice.
+- Then update work item to Rejected.
+- Rejection comment: Vendor with [vendor-taxid or vendor-name] not present in system. Email sent to VDD.
+- Continue until no more WI3 items.
