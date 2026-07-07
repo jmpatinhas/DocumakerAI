@@ -32,3 +32,22 @@ Please follow these rules:
 9. After generating the draft, list the main open questions that need clarification.
 
 Please create the best possible first draft of the PDD based on the artefacts attached.
+
+
+
+
+I’ve been testing DocuMakerAI, my AI build that takes images, documents, and process artefacts, and uses them to populate a Word document template in a Process Design Document format.
+
+I’ve run into a few issues that I’d like to brainstorm with you:
+
+1. The agent is not populating the existing Word PDD template. It seems to be creating a new document with different formatting instead of using the approved template.
+2. It is dumping the full PDD content into the chat, rather than focusing on generating the document output.
+3. It is not generating the Mermaid process flow diagram.
+4. It is not embedding the screenshots into the PDD. Instead, it only adds placeholders such as image filenames.
+
+I suspect some of these may be platform/tooling limitations rather than prompt issues, so I’d really appreciate your input on the best way forward.
+
+Would you be available for a short brainstorming call to discuss possible approaches?
+
+Thanks,
+
